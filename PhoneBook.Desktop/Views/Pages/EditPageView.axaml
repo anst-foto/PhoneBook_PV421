@@ -1,0 +1,15 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PhoneBook.Desktop.ViewModels"
+             
+             x:Class="PhoneBook.Desktop.Views.EditPageView"
+             x:DataType="vm:EditPageViewModel">
+    <UserControl.DataContext>
+        <vm:EditPageViewModel/>
+    </UserControl.DataContext>
+    
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+    </DockPanel>
+</UserControl>

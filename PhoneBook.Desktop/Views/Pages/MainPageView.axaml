@@ -1,0 +1,14 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PhoneBook.Desktop.ViewModels"
+             
+             x:Class="PhoneBook.Desktop.Views.MainPageView"
+             x:DataType="vm:MainPageViewModel">
+    <DockPanel LastChildFill="True">
+        <TextBlock Text="{Binding Title}"
+                   DockPanel.Dock="Top"/>
+        
+        <DataGrid AutoGenerateColumns="True"
+                  ItemsSource="{Binding Persons}"/>
+    </DockPanel>
+</UserControl>
