@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Models\"/>
         <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
 
@@ -23,6 +22,13 @@
             <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
             <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.*" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.*"/>
+        <PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PhoneBook.BLL\PhoneBook.BLL.csproj" />
+      <ProjectReference Include="..\PhoneBook.Model\PhoneBook.Model.csproj" />
     </ItemGroup>
 </Project>
