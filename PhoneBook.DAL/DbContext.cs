@@ -16,19 +16,31 @@ public class DbContext : ICrud
 
     public bool Update(Person person)
     {
-        throw new NotImplementedException();
-    }
-
-    public bool Delete(Person person)
-    {
-        throw new NotImplementedException();
+        var db = new NpgsqlConnection(ConnectionString);
+        db.Open();
+        var sql = """
+                  UPDATE table_persons 
+                  SET last_name = @last_name, 
+                      first_name = @first_name, 
+                      is_active = @is_active 
+                  WHERE id = @id
+                  """;
+        var command = new NpgsqlCommand(sql, db);
+        command.Parameters.AddWithValue("id", person.Id);
+        command.Parameters.AddWithValue("last_name", person.LastName);
+        command.Parameters.AddWithValue("first_name", person.FirstName);
+        command.Parameters.AddWithValue("is_active", person.IsActive);
+        var result = command.ExecuteNonQuery();
+        db.Close();
+        
+        return result > 0;
     }
 
     public IEnumerable<Person> GetAll()
     {
         var db = new NpgsqlConnection(ConnectionString);
         db.Open();
-        var sql = "SELECT * FROM table_persons";
+        var sql = "SELECT * FROM table_persons WHERE is_active = TRUE";
         var command = new NpgsqlCommand(sql, db);
         var reader = command.ExecuteReader();
         var persons = new List<Person>();

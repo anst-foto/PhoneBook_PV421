@@ -1,0 +1,17 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             x:Class="PhoneBook.Desktop.Components.InputComponent"
+             x:Name="Component">
+    <Grid ColumnDefinitions="*, 5*">
+        <Label Content="{Binding ElementName=Component, Path=LabelContent, Mode=OneWay}"
+               Target="{Binding ElementName=InputId}"
+               Grid.Column="0"/>
+        <TextBox x:Name="InputId" 
+                 Text="{Binding ElementName=Component, Path=InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Watermark="{Binding #Component.WatermarkText}"
+                 UseFloatingWatermark="{Binding ElementName=Component, Path=UseFloatingWatermark, Mode=OneWay}"
+                 IsReadOnly="{Binding ElementName=Component, Path=IsReadOnly, Mode=OneWay}"
+                 Grid.Column="1"/>
+    </Grid>
+</UserControl>

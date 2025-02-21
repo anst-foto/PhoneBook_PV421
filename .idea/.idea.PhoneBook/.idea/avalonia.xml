@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PhoneBook.Desktop/App.axaml" value="PhoneBook.Desktop/PhoneBook.Desktop.csproj" />
+        <entry key="PhoneBook.Desktop/Components/InputComponent.axaml" value="PhoneBook.Desktop/PhoneBook.Desktop.csproj" />
+        <entry key="PhoneBook.Desktop/Views/MainWindow.axaml" value="PhoneBook.Desktop/PhoneBook.Desktop.csproj" />
+        <entry key="PhoneBook.Desktop/Views/Pages/EditPageView.axaml" value="PhoneBook.Desktop/PhoneBook.Desktop.csproj" />
+        <entry key="PhoneBook.Desktop/Views/Pages/MainPageView.axaml" value="PhoneBook.Desktop/PhoneBook.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

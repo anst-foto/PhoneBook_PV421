@@ -1,14 +1,44 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:PhoneBook.Desktop.ViewModels"
+             xmlns:m="using:PhoneBook.Model"
              
              x:Class="PhoneBook.Desktop.Views.MainPageView"
              x:DataType="vm:MainPageViewModel">
     <DockPanel LastChildFill="True">
         <TextBlock Text="{Binding Title}"
                    DockPanel.Dock="Top"/>
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Bottom">
+            <Button Content="Редактировать"
+                    Command="{Binding CommandEditPerson}"/>
+        </StackPanel>
         
-        <DataGrid AutoGenerateColumns="True"
-                  ItemsSource="{Binding Persons}"/>
+        <DataGrid AutoGenerateColumns="False"
+                  ItemsSource="{Binding Persons}"
+                  SelectedItem="{Binding SelectedPerson}"
+                  SelectionMode="Single"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Binding="{Binding Id}"/>
+                <!--<DataGridTemplateColumn>
+                    <DataTemplate x:DataType="{x:Type m:Person}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding FirstName}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Имя">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="LastName"/>
+                            <Binding Path="FirstName"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </DockPanel>
 </UserControl>

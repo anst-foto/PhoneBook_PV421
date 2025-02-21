@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using PhoneBook.Desktop.ViewModels;
 using PhoneBook.Desktop.Views;
+using PhoneBook.Model;
 
 namespace PhoneBook.Desktop;
 

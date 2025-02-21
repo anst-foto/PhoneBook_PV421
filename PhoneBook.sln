@@ -8,6 +8,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.DAL", "PhoneBook.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook.Model", "PhoneBook.Model\PhoneBook.Model.csproj", "{9D8EB9F5-1AD8-4567-BAA6-7A385A6F2EA2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Item", "Solution Item", "{33CC7B82-3306-4BA9-A346-F9A0BD51B876}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		create_database.sql = create_database.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

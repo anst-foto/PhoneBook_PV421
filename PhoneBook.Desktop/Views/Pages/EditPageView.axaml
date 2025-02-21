@@ -1,15 +1,37 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:PhoneBook.Desktop.ViewModels"
+             xmlns:c="using:PhoneBook.Desktop.Components"
              
              x:Class="PhoneBook.Desktop.Views.EditPageView"
              x:DataType="vm:EditPageViewModel">
-    <UserControl.DataContext>
-        <vm:EditPageViewModel/>
-    </UserControl.DataContext>
-    
     <DockPanel LastChildFill="True">
         <TextBlock Text="{Binding Title}"
                    DockPanel.Dock="Top"/>
+        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical"
+                        DataContext="{Binding Person}">
+                <c:InputComponent LabelContent="ID"
+                                  InputText="{Binding Id}"
+                                  IsReadOnly="True"/>
+                <c:InputComponent LabelContent="Фамилия"
+                                  InputText="{Binding LastName}"
+                                  IsReadOnly="True"/>
+                <c:InputComponent LabelContent="Имя"
+                                  InputText="{Binding FirstName}"
+                                  IsReadOnly="True"/>
+                <c:InputComponent LabelContent="Удалён?"
+                                  InputText="{Binding IsDeleted}"
+                                  IsReadOnly="True"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Сохранить"
+                        Command="{Binding CommandSave}"/>
+                <Button Content="Очистить"
+                        Command="{Binding CommandClear}"/>
+            </StackPanel>
+        </StackPanel>
     </DockPanel>
 </UserControl>

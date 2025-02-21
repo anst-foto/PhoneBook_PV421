@@ -20,7 +20,8 @@ CREATE TABLE table_phones(
 INSERT INTO table_persons(last_name, first_name, is_active) 
 VALUES ('Kowalski', 'Jan', TRUE),
        ('Nowak', 'Adam', TRUE),
-       ('Nowak', 'Anna', TRUE);
+       ('Nowak', 'Anna', TRUE),
+       ('Kowalski', 'Anna', FALSE);
 
 INSERT INTO table_phones(type, number, person_id)
 VALUES ('Mobile', '123456789', 1),

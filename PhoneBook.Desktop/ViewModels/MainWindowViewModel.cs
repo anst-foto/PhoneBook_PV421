@@ -11,7 +11,7 @@ public class MainWindowViewModel : ViewModelBase
     public ObservableCollection<PageListItem> Pages { get; } = 
     [
         new() {PageViewModel = new MainPageViewModel(new Service())},
-        new() {PageViewModel = new EditPageViewModel()},
+        new() {PageViewModel = new EditPageViewModel(new Service())}
     ];
     [Reactive] public PageListItem SelectedPage { get; set; }
     
